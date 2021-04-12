@@ -3,11 +3,12 @@ import datetime
 import pandas as pd
 import os
 
+from regressor import run
+
+
 def loadDataFromDataset():
     #citirea datelor
-    df = pd.read_csv(
-        os.path.join('/Users/Andreea Circiu/PycharmProjects/VremeaCuBusu/weatherHistory.csv',
-                     'weatherHistory.csv'))
+    df = pd.read_csv('./weatherHistory/weatherHistory.csv')
 
     #eliminarea coloanei Loud Cover deoarece nu este necesara cerintelor noastre de implementare
     del df["Loud Cover"]
@@ -25,6 +26,5 @@ def loadDataFromDataset():
     return df
 
 df=loadDataFromDataset()
-
-
+run(df)
 
